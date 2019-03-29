@@ -7,9 +7,10 @@ const examples = [
   1 / 4,
   7 / 8,
   29 / 63,
+  1 /3,
 ];
 
 for (let i = 0; i < examples.length; i += 1) {
   const example = examples[i];
-  console.log(getFixed(example, 3), example);
+  console.log(getFixed(example, 2), example);
 }
