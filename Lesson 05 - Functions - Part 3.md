@@ -12,7 +12,7 @@
 	- working with Array data
 		- This is important when working with API data
 	- Asynchronous programming patterns
-		- These are super common in UI development like React, jQuery, or even vanilla JS. 
+		- These are super common in UI development like React, jQuery, or even vanilla JS.
 
 ## One more thing on scope...
 ### Immediately Invoked Function Expressions (IIFE)
@@ -22,7 +22,7 @@ Sometimes you want to create a scope so that you can have private variables. One
 ```javascript
 (function(){
 	var myVar = "look mom, private variables!";
-	
+
 	//Do some stuff with myVar...
 })();
 
@@ -153,7 +153,7 @@ Sometimes you want to create a scope so that you can have private variables. One
 
 (function(){
 	var myVar = "look mom, private variables!";
-	
+
 	//Do some stuff with myVar...
 })();
 
@@ -195,7 +195,7 @@ var secretIdentity = superHeroes.map(function(revealArray){
 
 console.log(secretIdentity.join("\n"));
 ```
-- - - - 
+- - - -
 
 ## Exercise 2: (Using Array Functions)
 
@@ -249,19 +249,17 @@ return player.firstName + ' ' + player.lastName;
 });
 
 //Number of touchdowns by runningbacks
-players
-.filter(function(player){
-return player.position ==='RB';
-})
-.reduce(function(total, player){
-total += player.touchdowns;
+players.filter(function(player){
+    return player.position === 'RB';
+}).reduce(function(sum, current){
+    return sum + current.touchdowns;
 },0)
-	
+
 ```
 
-## Asynchronous Programming 
+## Asynchronous Programming
 
-In computer programs, asynchronous operation means that a process operates independently of other processes, whereas synchronous operation means that the process runs only as a result of some other process being completed or handing off operation. 
+In computer programs, asynchronous operation means that a process operates independently of other processes, whereas synchronous operation means that the process runs only as a result of some other process being completed or handing off operation.
 
 #### _Why_ is this important?
 Asynchronus programming:<br>
@@ -269,7 +267,7 @@ Asynchronus programming:<br>
 - Allows for the user to continue interacting with the application while request is being handled
 - Improves efficiency
 - Saves us from expensive full-page reloads
-- Allows for multiple requests to be sent and fulfilled 
+- Allows for multiple requests to be sent and fulfilled
 
 ### Callback pattern
 The passing of a function into another function to be run at a later time is called the "callback pattern". It's prominent in event based programming, which is what UI Development is all about.
@@ -307,12 +305,12 @@ The above example is pretty straight forward, but can get tricky when callback f
 var teacher = {
 	name: 'Shane',
 	speak: function() {
-		
+
 		//Maybe you're fetching data from an API, or getting user input
 		setTimeout(function(){
 			console.log('later my name is ' + this.name);
 		},1000)
-		
+
 		//Runs immediately
 		console.log('Now my name is ' + this.name);
 	}
@@ -331,17 +329,17 @@ Often times, like the example above, you need access to the calling scope or wan
 var teacher = {
 	name: 'Shane',
 	speak: function() {
-		
+
 		//Save this to a variable
 		var self = this;
-		
+
 		//self is visible inside function because of closure
 		setTimeout(function(){
 			console.log('later my name is ' + self.name);
 		},1000);
 	}
 }
-```	
+```
 
 #### function.bind
 Explicity sets the `this` value at function defintion time.
@@ -350,12 +348,12 @@ Explicity sets the `this` value at function defintion time.
 var teacher = {
 	name: 'Shane',
 	speak: function() {
-		
+
 		//Bind a function to a specific context
 		var boundFunction = function(){
 			console.log('later my name is ' + this.name);
 		}.bind(this);
-		
+
 		//boundFunction will always run in bound context
 		setTimeout(boundFunction,1000);
 	}
@@ -381,7 +379,7 @@ The only difference is that `.apply()` takes an array of arguments to pass to th
 
 Going back to our slideshow object, let's add some functionality.
 
-1. create an empty property named `playInterval` 
+1. create an empty property named `playInterval`
 2. A `play()` function that moves to the next photo ever 2000ms until the end.<br> *Tip - use `playInterval = setInterval(fn,ms)`*.
 3. A `pause()` function that stops the slideshow <br> *Tip - use `clearInterval(playInterval)`*
 4. Automatically pause the slideshow if it gets to the end of the photolist while playing.
@@ -400,7 +398,7 @@ Update after submissions.
 	- Create a branch off of your existing slideshow
 	- For your branch use the naming convention `async_YOUR_NAME_HERE`
 - Complete the [Functional Javascript](https://github.com/timoxley/functional-javascript-workshop) module at [NodeSchool](http://nodeschool.io/)
-	- Upload a screenshot to Slack 
+	- Upload a screenshot to Slack
 
 
 ## Reading
