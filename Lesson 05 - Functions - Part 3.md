@@ -21,7 +21,7 @@ Sometimes you want to create a scope so that you can have private variables. One
 
 ```javascript
 (function(){
-	var myVar = "look mom, private variables!";
+	const myVar = "look mom, private variables!";
 
 	//Do some stuff with myVar...
 })();
@@ -69,13 +69,13 @@ More than likely, in your own development, you've already been using Higher Orde
 Sometimes you want to filter a data set based on some criteria. The Array object supports a .filter function. It takes a filter function that returns a pass value of true or false.
 
 ```javascript
-var students = [
+const students = [
 	{name: 'Cam Newton', average: 90},
 	{name: 'Ted Ginn', average: 58},
 	{name: 'Greg Olsen', average: 82}
 ];
 
-var passingStudents = students.filter(function(student){
+const passingStudents = students.filter(function(student){
 	return student.average > 60;
 });
 
@@ -90,13 +90,13 @@ passingStudents === [
 Sometimes you want to find the first item in the array that meets a certain criteria. Its the single version of filter.
 
 ```javascript
-var students = [
+const students = [
 	{name: 'Cam Newton', average: 90},
 	{name: 'Ted Ginn', average: 58},
 	{name: 'Greg Olsen', average: 82}
 ];
 
-var passingStudents = students.find(function(student){
+const passingStudents = students.find(function(student){
 	return student.average > 50;
 });
 
@@ -111,13 +111,13 @@ Sometimes you want to transform data.
 The Array's Map function lets you iterate over an array and produce another array with a new value for each item.
 
 ```javascript
-var students = [
+const students = [
 	{firstName: 'Cam', lastName: 'Newton'},
 	{firstName: 'Ted', lastName: 'Ginn'},
 	{firstName: 'Greg', lastName: 'Olsen'}
 ]
 
-var fullNames = students.map(function(student){
+const fullNames = students.map(function(student){
 	return student.firstName + ' ' + student.lastName;
 })
 
@@ -131,13 +131,13 @@ Sometimes you want to calculate a single value based on all the items in an arra
 The Array's Reduce function let's you iterate over an array and calculate a value.
 
 ```javascript
-var students = [
+const students = [
 	{name: 'Cam Newton', assignmentsCompleted: 6},
 	{name: 'Ted Ginn', assignmentsCompleted: 10},
 	{name: 'Greg Olsen', assignmentsCompleted: 8}
 ]
 
-var totalAssignments = students.reduce(function(sum,current){
+const totalAssignments = students.reduce(function(sum,current){
 	return sum + current.assignmentsCompleted;
 }, 0);
 
@@ -152,7 +152,7 @@ Sometimes you want to create a scope so that you can have private variables. One
 ```javascript
 
 (function(){
-	var myVar = "look mom, private variables!";
+	const myConst = "look mom, private variables!";
 
 	//Do some stuff with myVar...
 })();
@@ -185,11 +185,11 @@ console.log(myVar); //undefined;
 Exercise Answer:
 
 ```javascript
-var superHeroes = [ ["Batman", "Bruce Wayne"],
+const superHeroes = [ ["Batman", "Bruce Wayne"],
                    ["Spiderman", "Peter Parker"],
                    ["The Flash", "Barry Allen"]];
 
-var secretIdentity = superHeroes.map(function(revealArray){
+const secretIdentity = superHeroes.map(function(revealArray){
   return revealArray.join(" is ");
 });
 
@@ -203,7 +203,7 @@ console.log(secretIdentity.join("\n"));
 Using the following data:
 
 ```javascript
-var players = [
+const players = [
 	{firstName: 'Cam', lastName: 'Newton', position: 'QB', touchdowns: 32},
 	{firstName: 'Derek', lastName: 'Anderson', position: 'QB', touchdowns: 0},
 	{firstName: 'Jonathan', lastName: 'Stewart', position: 'RB', touchdowns: 12},
@@ -302,7 +302,7 @@ getData('/my-api/data', function(data) {
 The above example is pretty straight forward, but can get tricky when callback functions are passed around in asynchronous functions. You will, without doubt, make a mistake like this the first time you write a JS application:
 
 ```javascript
-var teacher = {
+const teacher = {
 	name: 'Shane',
 	speak: function() {
 
@@ -321,17 +321,19 @@ teacher.speak();
 
 When you register a function to happen later using something like `setTimeout()`, the window object ends up running the function.
 
+
+
 ### Assigning Context
 Often times, like the example above, you need access to the calling scope or want to assign a specific scope. There are a few different ways to do this.
 
 #### Closure hack
 ```javascript
-var teacher = {
+const teacher = {
 	name: 'Shane',
 	speak: function() {
 
 		//Save this to a variable
-		var self = this;
+		const self = this;
 
 		//self is visible inside function because of closure
 		setTimeout(function(){
@@ -345,12 +347,12 @@ var teacher = {
 Explicity sets the `this` value at function defintion time.
 
 ```javascript
-var teacher = {
+const teacher = {
 	name: 'Shane',
 	speak: function() {
 
 		//Bind a function to a specific context
-		var boundFunction = function(){
+		const boundFunction = function(){
 			console.log('later my name is ' + this.name);
 		}.bind(this);
 
@@ -364,9 +366,9 @@ var teacher = {
 Explicitly set the `this` value at execution time.
 
 ```javascript
-var teacher = {name: 'Shane'};
+const teacher = {name: 'Shane'};
 
-var speak = function(item1, item2){
+const speak = function(item1, item2){
 	console.log(this.name, item1, item2);
 }
 
