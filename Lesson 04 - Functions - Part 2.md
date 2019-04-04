@@ -1,4 +1,4 @@
-#Lesson 4 - Functions - Part 2 - Scopes, Closures, & this
+##Lesson 4 - Functions - Part 2 - Scopes, Closures, & this
 
 ## Recap & Agenda
 
