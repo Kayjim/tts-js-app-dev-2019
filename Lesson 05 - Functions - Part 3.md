@@ -12,7 +12,7 @@
 	- working with Array data
 		- This is important when working with API data
 	- Asynchronous programming patterns
-		- These are super common in UI development like React, jQuery, or even vanilla JS. 
+		- These are super common in UI development like React, jQuery, or even vanilla JS.
 
 ## One more thing on scope...
 ### Immediately Invoked Function Expressions (IIFE)
@@ -21,8 +21,8 @@ Sometimes you want to create a scope so that you can have private variables. One
 
 ```javascript
 (function(){
-	var myVar = "look mom, private variables!";
-	
+	const myVar = "look mom, private variables!";
+
 	//Do some stuff with myVar...
 })();
 
@@ -69,13 +69,13 @@ More than likely, in your own development, you've already been using Higher Orde
 Sometimes you want to filter a data set based on some criteria. The Array object supports a .filter function. It takes a filter function that returns a pass value of true or false.
 
 ```javascript
-var students = [
+const students = [
 	{name: 'Cam Newton', average: 90},
 	{name: 'Ted Ginn', average: 58},
 	{name: 'Greg Olsen', average: 82}
 ];
 
-var passingStudents = students.filter(function(student){
+const passingStudents = students.filter(function(student){
 	return student.average > 60;
 });
 
@@ -90,13 +90,13 @@ passingStudents === [
 Sometimes you want to find the first item in the array that meets a certain criteria. Its the single version of filter.
 
 ```javascript
-var students = [
+const students = [
 	{name: 'Cam Newton', average: 90},
 	{name: 'Ted Ginn', average: 58},
 	{name: 'Greg Olsen', average: 82}
 ];
 
-var passingStudents = students.find(function(student){
+const passingStudents = students.find(function(student){
 	return student.average > 50;
 });
 
@@ -111,13 +111,13 @@ Sometimes you want to transform data.
 The Array's Map function lets you iterate over an array and produce another array with a new value for each item.
 
 ```javascript
-var students = [
+const students = [
 	{firstName: 'Cam', lastName: 'Newton'},
 	{firstName: 'Ted', lastName: 'Ginn'},
 	{firstName: 'Greg', lastName: 'Olsen'}
 ]
 
-var fullNames = students.map(function(student){
+const fullNames = students.map(function(student){
 	return student.firstName + ' ' + student.lastName;
 })
 
@@ -131,13 +131,13 @@ Sometimes you want to calculate a single value based on all the items in an arra
 The Array's Reduce function let's you iterate over an array and calculate a value.
 
 ```javascript
-var students = [
+const students = [
 	{name: 'Cam Newton', assignmentsCompleted: 6},
 	{name: 'Ted Ginn', assignmentsCompleted: 10},
 	{name: 'Greg Olsen', assignmentsCompleted: 8}
 ]
 
-var totalAssignments = students.reduce(function(sum,current){
+const totalAssignments = students.reduce(function(sum,current){
 	return sum + current.assignmentsCompleted;
 }, 0);
 
@@ -152,8 +152,8 @@ Sometimes you want to create a scope so that you can have private variables. One
 ```javascript
 
 (function(){
-	var myVar = "look mom, private variables!";
-	
+	const myConst = "look mom, private variables!";
+
 	//Do some stuff with myVar...
 })();
 
@@ -185,17 +185,17 @@ console.log(myVar); //undefined;
 Exercise Answer:
 
 ```javascript
-var superHeroes = [ ["Batman", "Bruce Wayne"],
+const superHeroes = [ ["Batman", "Bruce Wayne"],
                    ["Spiderman", "Peter Parker"],
                    ["The Flash", "Barry Allen"]];
 
-var secretIdentity = superHeroes.map(function(revealArray){
+const secretIdentity = superHeroes.map(function(revealArray){
   return revealArray.join(" is ");
 });
 
 console.log(secretIdentity.join("\n"));
 ```
-- - - - 
+- - - -
 
 ## Exercise 2: (Using Array Functions)
 
@@ -203,7 +203,7 @@ console.log(secretIdentity.join("\n"));
 Using the following data:
 
 ```javascript
-var players = [
+const players = [
 	{firstName: 'Cam', lastName: 'Newton', position: 'QB', touchdowns: 32},
 	{firstName: 'Derek', lastName: 'Anderson', position: 'QB', touchdowns: 0},
 	{firstName: 'Jonathan', lastName: 'Stewart', position: 'RB', touchdowns: 12},
@@ -249,19 +249,17 @@ return player.firstName + ' ' + player.lastName;
 });
 
 //Number of touchdowns by runningbacks
-players
-.filter(function(player){
-return player.position ==='RB';
-})
-.reduce(function(total, player){
-total += player.touchdowns;
+players.filter(function(player){
+    return player.position === 'RB';
+}).reduce(function(sum, current){
+    return sum + current.touchdowns;
 },0)
-	
+
 ```
 
-## Asynchronous Programming 
+## Asynchronous Programming
 
-In computer programs, asynchronous operation means that a process operates independently of other processes, whereas synchronous operation means that the process runs only as a result of some other process being completed or handing off operation. 
+In computer programs, asynchronous operation means that a process operates independently of other processes, whereas synchronous operation means that the process runs only as a result of some other process being completed or handing off operation.
 
 #### _Why_ is this important?
 Asynchronus programming:<br>
@@ -269,7 +267,7 @@ Asynchronus programming:<br>
 - Allows for the user to continue interacting with the application while request is being handled
 - Improves efficiency
 - Saves us from expensive full-page reloads
-- Allows for multiple requests to be sent and fulfilled 
+- Allows for multiple requests to be sent and fulfilled
 
 ### Callback pattern
 The passing of a function into another function to be run at a later time is called the "callback pattern". It's prominent in event based programming, which is what UI Development is all about.
@@ -304,15 +302,15 @@ getData('/my-api/data', function(data) {
 The above example is pretty straight forward, but can get tricky when callback functions are passed around in asynchronous functions. You will, without doubt, make a mistake like this the first time you write a JS application:
 
 ```javascript
-var teacher = {
+const teacher = {
 	name: 'Shane',
 	speak: function() {
-		
+
 		//Maybe you're fetching data from an API, or getting user input
 		setTimeout(function(){
 			console.log('later my name is ' + this.name);
 		},1000)
-		
+
 		//Runs immediately
 		console.log('Now my name is ' + this.name);
 	}
@@ -323,39 +321,41 @@ teacher.speak();
 
 When you register a function to happen later using something like `setTimeout()`, the window object ends up running the function.
 
+
+
 ### Assigning Context
 Often times, like the example above, you need access to the calling scope or want to assign a specific scope. There are a few different ways to do this.
 
 #### Closure hack
 ```javascript
-var teacher = {
+const teacher = {
 	name: 'Shane',
 	speak: function() {
-		
+
 		//Save this to a variable
-		var self = this;
-		
+		const self = this;
+
 		//self is visible inside function because of closure
 		setTimeout(function(){
 			console.log('later my name is ' + self.name);
 		},1000);
 	}
 }
-```	
+```
 
 #### function.bind
 Explicity sets the `this` value at function defintion time.
 
 ```javascript
-var teacher = {
+const teacher = {
 	name: 'Shane',
 	speak: function() {
-		
+
 		//Bind a function to a specific context
-		var boundFunction = function(){
+		const boundFunction = function(){
 			console.log('later my name is ' + this.name);
 		}.bind(this);
-		
+
 		//boundFunction will always run in bound context
 		setTimeout(boundFunction,1000);
 	}
@@ -366,9 +366,9 @@ var teacher = {
 Explicitly set the `this` value at execution time.
 
 ```javascript
-var teacher = {name: 'Shane'};
+const teacher = {name: 'Shane'};
 
-var speak = function(item1, item2){
+const speak = function(item1, item2){
 	console.log(this.name, item1, item2);
 }
 
@@ -381,7 +381,7 @@ The only difference is that `.apply()` takes an array of arguments to pass to th
 
 Going back to our slideshow object, let's add some functionality.
 
-1. create an empty property named `playInterval` 
+1. create an empty property named `playInterval`
 2. A `play()` function that moves to the next photo ever 2000ms until the end.<br> *Tip - use `playInterval = setInterval(fn,ms)`*.
 3. A `pause()` function that stops the slideshow <br> *Tip - use `clearInterval(playInterval)`*
 4. Automatically pause the slideshow if it gets to the end of the photolist while playing.
@@ -400,7 +400,7 @@ Update after submissions.
 	- Create a branch off of your existing slideshow
 	- For your branch use the naming convention `async_YOUR_NAME_HERE`
 - Complete the [Functional Javascript](https://github.com/timoxley/functional-javascript-workshop) module at [NodeSchool](http://nodeschool.io/)
-	- Upload a screenshot to Slack 
+	- Upload a screenshot to Slack
 
 
 ## Reading

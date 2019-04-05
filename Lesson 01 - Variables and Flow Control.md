@@ -12,7 +12,7 @@
 * This is an ACCELERATED course
 * Starts with language basics to build the foundation
 * 5 weeks in, we switch gears to bleeding edge JS (ES6, React, Webpack, )
-* Pre Reqs: 
+* Pre Reqs:
 	* HTML/CSS
 	* Git
 
@@ -23,7 +23,7 @@
 * **Node** - Download and install https://nodejs.org
 * **Google Chrome/Firefox**
 * **Github Account** - https://github.com/ttsJavaScriptApps
-* **Slack** 
+* **Slack**
 * **Cadence** - Computers down for lecture. Pairing for exercises, the importance of homework
 
 ## Syllabus
@@ -100,16 +100,16 @@
 Variables are declared with var. All statements in JS end with a semicolon.
 
 ```javascript
-var x = 1;
-var y = "2";
-var z = true;
+const x = 1;
+const y = "2";
+const z = true;
 ```
 
 ### Loose typing
 variables are declared with var, but have a type that can be changed
 
 ```javascript
-var z = 1;
+const z = 1;
 z = 'abc'; //would throw an error in strong typed languages
 typeof z //string
 z = 1
@@ -125,20 +125,20 @@ variable type is coerced to a type that makes sense when reached
 7 + 7 + 7; // = 21
 
 
-// First two 7's are calculated... then concatened into a string. 
+// First two 7's are calculated... then concatened into a string.
 // returning a string value
 7 + 7 + "7"; // = "147"
 
-// The entire expression is implicitly converted into a string and concatenated 
+// The entire expression is implicitly converted into a string and concatenated
 "7" + 7 + 7; // = "777"
 ```
-Above, when we add Integers (numbers) together, we get a sum of 21. 
+Above, when we add Integers (numbers) together, we get a sum of 21.
 However, in our second example. The first two 7's are calculated and then, converted into a string and concatenated with the string value of 7.
 In the final example, the entire expression is almost immediately converted into a string.
 
 **EXPLICIT** coercion:
 
-As you can see, JavaScript is trying to be helpful, and sometimes this is the desired behavior. 
+As you can see, JavaScript is trying to be helpful, and sometimes this is the desired behavior.
 However, what happens when you retrieve data from a user and it needs to be forcibly coerced? This is where Explicit coercion comes in.
 
 Let's say you are helping a local non-profit raise funds and the pledges are coming in through the website. Obviously, the data is going to come in a string. It then needs to be coerced into a number (so that it can be added).
@@ -147,9 +147,9 @@ Here's an example:
 
 ```javascript
 // perform in browser of JS Bin
-var amountRaisedSoFar = 1000;
+const amountRaisedSoFar = 1000;
 
-var newDonation = prompt("How much would you like to donate?"); 
+const newDonation = prompt("How much would you like to donate?");
 
 amountRaisedSoFar = Number(newDonation) + amountRaisedSoFar;
 
@@ -172,10 +172,10 @@ According to the [Mozilla Documentation](https://developer.mozilla.org/en-US/doc
 > A variable that has not been assigned a value is of type undefined.
 
 ```javascript
-var something;
+const something;
 typeof something // "undefined"
 ```
- 
+
 According to [Ajay Matharu](http://www.ajaymatharu.com/javascript-difference-between-undefined-and-null/)
 > On the other hand, null is an assignment value. It can be assigned to a variable as a representation of no value.
 
@@ -186,11 +186,11 @@ According to [Ajay Matharu](http://www.ajaymatharu.com/javascript-difference-bet
 foo; // "ReferenceError: foo is not defined"
 
 // foo is known to exist now but it has no type or value:
-var foo = null; 
+const foo = null;
 foo// "null"
 ```
 
-Don't spend too much time on `null` at the moment. It will become clear when the time arises to use it. 
+Don't spend too much time on `null` at the moment. It will become clear when the time arises to use it.
 
 In short...<br>
 A variable that never declared is `undefined`.
@@ -198,7 +198,7 @@ A variable that is declared but not assigned a value is `null`.
 
 ```javascript
 something; //undefined
-var something; //null
+const something; //null
 ```
 
 ## Break
@@ -217,7 +217,7 @@ var something; //null
 ### `If` statement
 ```javascript
 //Simple if statement
-var x = true;
+const x = true;
 if(x) {
 	console.log(true);
 } else {
@@ -231,7 +231,7 @@ if(x) {
 Write a script that:
 
 - stores the number of cups (that a person has consumed) in a variable
-- if the person has had *less than* 3 cups 
+- if the person has had *less than* 3 cups
 	- log a message to the console saying: ("Yes I'll take another cup of coffee")
 - if not
 	- log a message to console saying ("I think I'm okay for now")   
@@ -240,7 +240,7 @@ Write a script that:
 **CHALLENGE 1 ANSWER:**
 
 ```javascript
-var cups = 1
+const cups = 1
 
 if(cups < 3){
     console.log("Yes. I'll take another cup of coffee!");
@@ -253,7 +253,7 @@ if(cups < 3){
 The double equals `==` tries to ignore the type when comparing. The triple equals `===` takes into account type. These are called loose and strict equality checks. You pretty much always want to use strict.
 
 ```javascript
-var x = 10;
+const x = 10;
 //Type coersion is happening here!
 if(x == '10') {
 	console.log(true); //true
@@ -280,7 +280,7 @@ if(10 && 'abc' && true) {
 Only falsey values: `false`, `0`, `null` or `undefined` evaluate to false
 
 ```javascript
-var whatever;
+const whatever;
 if(false || 0 || null || whatever) {
 	console.log(true)
 } else {
@@ -289,7 +289,7 @@ if(false || 0 || null || whatever) {
 ```
 
 ### Comparison Operators
-* `<` 
+* `<`
 * `>`
 * `<=`
 * `>=`
@@ -311,8 +311,8 @@ false && somethingTotallyUndefined; //true, no error
 Sometimes this is used in place of if statements
 
 ```javascript
-somevar && myFunction() //equivalant to if(somevar)
-somevar || myFunction() //equivalant to if(!somevar)
+someconst && myFunction() //equivalant to if(somevar)
+someconst || myFunction() //equivalant to if(!somevar)
 ```
 
 **CHALLENGE 2**<br>
@@ -332,9 +332,9 @@ somevar || myFunction() //equivalant to if(!somevar)
 **CHALLENGE 2 ANSWER:**
 
 ```javascript
-var temp = 85;
-var precipitation = false;
-var indoors = true;
+const temp = 85;
+const precipitation = false;
+const indoors = true;
 
 console.log("The temperature is " + temp + " degrees");
 
@@ -351,14 +351,14 @@ if (temp > 80 && precipitation === false) {
 ### For loop
 
 ```javascript
-for (var i = 0; i <= 9; i ++) {
+for (const i = 0; i <= 9; i ++) {
     console.log( i );
 }
 ```
 
-Let's work through each part of the loop. 
+Let's work through each part of the loop.
 
-within the parentheses, there are 3 key things happening: 
+within the parentheses, there are 3 key things happening:
 
 1. We are **setting** a variable's value (in this case, to 0)
 2. We are **comparing** the variable's value to the desired break-point
@@ -378,7 +378,7 @@ within the parentheses, there are 3 key things happening:
 **CHALLENGE 3 ANSWER:**
 
 ```javascript
-var bottle = 99;
+const bottle = 99;
 
 for (bottle; bottle >= 0; bottle --){
 
@@ -393,7 +393,7 @@ for (bottle; bottle >= 0; bottle --){
 
 ### While Statement
 ```javascript
-var x = 0;
+const x = 0;
 while(x < 10) {
 	x = x + 1;
 }
@@ -403,7 +403,7 @@ while(x < 10) {
 Cases fall through unless you remember to `break` after each case.
 
 ```javascript
-var x = 1
+const x = 1
 switch(x) {
 	case 3:
 		console.log('three')
@@ -422,7 +422,7 @@ switch(x) {
 A `break` statement jumps *out* of the loop.
 
 ```javascript
-for(var i = 0; i < 10; i++) {
+for(const i = 0; i < 10; i++) {
 	console.log(i);
 	console.log('before break');
 	break; // exits the next loop
@@ -433,7 +433,7 @@ for(var i = 0; i < 10; i++) {
 A `continue` statement jumps to the next *iteration*
 
 ```javascript
-for(var i = 0; i < 10; i++) {
+for(const i = 0; i < 10; i++) {
 	console.log(i);
 	console.log('before continue');
 	continue; // continues to the next iteration
@@ -446,7 +446,7 @@ for(var i = 0; i < 10; i++) {
 
 ###**Due 4/04/2019:**
 
-1. Read the following tutorial [JavaScript Strings](http://www.javascriptkit.com/javatutors/string4.shtml) 
+1. Read the following tutorial [JavaScript Strings](http://www.javascriptkit.com/javatutors/string4.shtml)
 2. Join our Slack Channel
 3. Send me your GitHub username
 
@@ -458,12 +458,12 @@ for(var i = 0; i < 10; i++) {
 
 	- Store the player names and number of wins for each player in variables
 	- Use a while loop to run the game until one player has 3 wins
-	- Use: 
+	- Use:
 	  ```
 	  var weapons = ['rock' , 'paper', 'scissors'];
-		
+
 	  var weaponOfChoice = weapons[parseInt(Math.random()*weapons.length) %3];
-	 ``` 
+	 ```
 	  to randomly select an item
 	- Output each players hand to the console
 	- Use an `if` or `switch` statement to determine a winner of the round
@@ -472,7 +472,7 @@ for(var i = 0; i < 10; i++) {
 	- When one player wins 3 rounds, announce that player's name as the game winner
 	- Push the code to our class GitHub Repo
 	- See below for all possible winning outcomes
-	
+
 	  <center>![](images/rockpaper_web.jpg)</center>
 
 

@@ -15,7 +15,7 @@
 
 ### Creating an Array
 ```javascript
-var teachers = ['Assaf', 'Shane'];
+const teachers = ['Assaf', 'Shane'];
 ```
 
 ### Addressing an Array
@@ -26,24 +26,24 @@ console.log(teachers[0]) //'Assaf'
 
 ### Get Array Length
 ```javascript
-var a = [1,2,3]
+const a = [1,2,3]
 teachers.length == 3;
 ```
 
 ### Push and Pop (like a pez dispenser)
 
 ```javascript
-var teachers = ['Assaf', 'Shane'];
+const teachers = ['Assaf', 'Shane'];
 teachers.push('Zack'); //['Assaf', 'Shane', 'Zack']
-var teacher1 = teachers.pop(); //teacher1 == 'Zack', teachers == ['Assaf', 'Shane']
+const teacher1 = teachers.pop(); //teacher1 == 'Zack', teachers == ['Assaf', 'Shane']
 ```
 
 ### Shift and Unshift (from the front)
 
 ```javascript
-var teachers = ['Assaf', 'Shane'];
+const teachers = ['Assaf', 'Shane'];
 teachers.unshift('Zack'); // ['Zack', Assaf', 'Shane']
-var teacher = teachers.shift(); //teacher == 'Zack', teachers = ['Assaf', Shane']
+const teacher = teachers.shift(); //teacher == 'Zack', teachers = ['Assaf', Shane']
 ```
 
 ### Arbitrary Adding
@@ -55,7 +55,7 @@ teachers[4] = 'Cam Newton'; // ['Assaf', 'Shane', 'Zack', undefined, 'CamNewton'
 ### Finding an item
 
 ```javascript
-var a = [10,11,20];
+const a = [10,11,20];
 a.indexOf(11); //1
 a.indexOf(50); //-1
 ```
@@ -63,7 +63,7 @@ a.indexOf(50); //-1
 ### Slicing and Splicing
 
 ```javascript
-var a = [1,2,3,4];
+const a = [1,2,3,4];
 
 //Slice - doesn't mutate array, slice(start,end)
 a.slice(0,2); //[1,2]
@@ -76,8 +76,8 @@ a.splice(1,2,'a','b'); //a is [1,'a','b',4]
 
 ```javascript
 //Iterating over Arrays using for loop and forEach
-var teachers = ['Assaf', 'Shane', 'Zack']
-for(var i = 0; i < teachers.length; i++) {
+const teachers = ['Assaf', 'Shane', 'Zack']
+for(let i = 0; i < teachers.length; i++) {
 	console.log(teachers[i]);
 }
 
@@ -99,12 +99,12 @@ teachers.join('&'); 'Assaf&Shane';
 
 ```javascript
 //Sorting
-var a = [2, 1, 3]
+const a = [2, 1, 3]
 a.sort(); //[1,2,3]
 
 a.reverse(); //[3,2,1]
 
-//Alternatively a.sort(mySortFunction); 
+//Alternatively a.sort(mySortFunction);
 ```
 
 
@@ -136,7 +136,7 @@ You're going to the grocery store and decide to use an array to keep track of yo
 An object is a set of keys and values, like a dictionary. Values can be
 
 ```javascript
-var course = {
+const course = {
 	name: 'JavaScript Applications',
 	awesome: true
 }
@@ -145,7 +145,7 @@ var course = {
 Values can be primative objects, arrays, or other objects
 
 ```javascript
-var course = {
+const course = {
 	name: 'JavaScript Applications',
 	awesome: true,
 	students: ['Jim', 'Katy'],
@@ -167,7 +167,7 @@ course['name']
 You can combine dot and bracket notation to address infinitely deeply nested values inside objects.
 
 ```javascript
-var course = {
+const course = {
 	name: 'JavaScript Applications',
 	awesome: true,
 	teachers: ['Assaf', 'Shane']
@@ -179,7 +179,7 @@ console.log(course.teachers[0]); //Assaf
 A more complex example:
 
 ```javascript
-var course = {
+const course = {
 	name: 'JavaScript Applications',
 	awesome: true,
 	teachers: ['Assaf', 'Shane'],
@@ -219,7 +219,7 @@ delete course.name; //remove one
 Given the following object:
 
 ```javascript
-var course = {
+const course = {
 	name: 'JavaScript Applications',
 	awesome: true,
 	teachers: ['Assaf', 'Shane'],
@@ -275,7 +275,7 @@ var course = {
 // will be updated after all homework is turned in
 ```
 
- 
+
 
 ## JSON
 You've probably heard of JSON. It's a text based data format based on JavaScript object syntax. It's used to store data and exchange it between applications
@@ -295,23 +295,23 @@ An important difference between JavaScript objects and JSON is that proper JSON 
 ## Value vs Reference types
 In JavaScript, primative types like ints and strings are assigned by value. Objects and Arrays (which are also objects) are assigned by reference.  
 
-A *value* variable holds its value like you might expect. A *reference* variable points to an object in memory. 
+A *value* variable holds its value like you might expect. A *reference* variable points to an object in memory.
 
-- Re-assigning a value type actually changes its value. 
+- Re-assigning a value type actually changes its value.
 - Re-assigning a reference type makes it point to a different object in memory.
 - Comparison of reference types compares the memory location, not value.
 
 Before proceeding, take a moment to read [this excellent StackOverflow post](http://stackoverflow.com/questions/13266616/primitive-value-vs-reference-value/13268731#13268731) regarding primitive and reference values
 
 Here are a few of examples to further illustrate:
- 
+
 ```javascript
 //Value types
-var x = 1;
-var y = 1;
+const x = 1;
+const y = 1;
 x === y; //true
 
-var y = x; 	// x == 1, y == 1
+const y = x; 	// x == 1, y == 1
 x === y; 	// true
 
 x = 2; 		// x == 2, y == 1
@@ -320,11 +320,11 @@ x === y; 	// false
 
 ```javascript
 //Reference types
-var x = {name: 'Evan'}
-var y = {name: 'Evan'}
+const x = {name: 'Evan'}
+const y = {name: 'Evan'}
 x === y; //false;
 
-var y = x; 		//x and y are {name: 'Evan'}
+const y = x; 		//x and y are {name: 'Evan'}
 x === y;		//true
 
 x.name = 'Noah'
@@ -335,9 +335,9 @@ y.name; // 'Noah'
 What do you suppose this means for Array's indexOf?
 
 ```javascript
-var matt = {name: 'matt'};
-var julian = {name: 'julian'};
-var students = [matt,julian];
+const matt = {name: 'matt'};
+const julian = {name: 'julian'};
+const students = [matt,julian];
 
 students.indexOf(julian); //1
 students.indexOf({name:'julian'}); //-1 (meaning nothing was found)
@@ -354,10 +354,10 @@ students.indexOf({name:'julian'}); //-1 (meaning nothing was found)
   - push the completed code to GitHub
   - use the naming convention `lesson_2_challenges_YOUR_INITIALS_HERE`
 
-2. Create an object that models the data of your favorite email application. 
+2. Create an object that models the data of your favorite email application.
 
   - Open the email application and take a look at the interface.
-  - What information do you see? Make a short list (e.g. emails, my name, mailbox list, an email preview...) 
+  - What information do you see? Make a short list (e.g. emails, my name, mailbox list, an email preview...)
   - Make a detailed outline of the data hierarchy. E.g -
   	- Gmail
   		- mailboxes
@@ -369,12 +369,12 @@ students.indexOf({name:'julian'}); //-1 (meaning nothing was found)
   			-  Eric
   			-  Katy
   		- Emails
-   		
-  - For each bullet in your outline, decide if it is a primative, array, or object.
+
+  - For each bullet in your outline, decide if it is a primitive, array, or object.
   - Use this information to create an object literal that models the application's data. E.g. -
-  
+
     ```javascript
-    var appData = {
+    const appData = {
     	name: 'Gmail',
     	mailboxes: [
     		'inbox',
@@ -385,25 +385,25 @@ students.indexOf({name:'julian'}); //-1 (meaning nothing was found)
     		{name: 'Shane', lastMessage: "I wont be in class today"},
     		{name: 'Katy', lastMessage: "You're such a nerd"}
     	]
-    	
+
     	//...
     }
     ```
-  
+
   Add as much detail as you'd like. Experiment and have fun with it. Nest objects inside of arrays and arrays inside of objects multiple levels deep. Ask yourself if some of the primatives you've created could be objects instead.
-  
+
 3. Once you've composed your object, write some code to address it.
-  
+
   - Get a list of inbox names
   - Get a list of emails
   - Get the text of the second email in the visible list
   - Mark an email as sent
   - Add a draft email to the drafts mailbox
   - etc. etc. etc.
-  
+
 4. push the completed code to our GitHub channel
   - use the naming convention `email_app_YOUR_INITIALS_HERE`
-  
+
 - - - -
 
 ## Reading
@@ -415,6 +415,3 @@ Javascript types
 
 JSON tutorial
 [http://www.w3schools.com/json/default.asp](http://www.w3schools.com/json/default.asp)
-
-
-
