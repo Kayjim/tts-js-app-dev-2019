@@ -104,7 +104,7 @@ Calculating gratutity is a repetitive task, so let's create a couple of function
 		- "your total including gratuity is:" 
 - **Limitation: You can only invoke the totalWithGrat function when logging the result**
 
-**Mariel's Bonus Question**
+**Jimmy's Bonus Question**
 
 - Find a way to fix the decimal point to only 2 places, ie: 100.00 <br> *(hint: the answer is in the sentence above)*
 
@@ -226,7 +226,7 @@ Let's revisit Rock Paper Scissors...
 	- When one player has won enough games, return the winning player object
 7. Play a game to 5 wins
 
-**Mariel's Bonus Questions**
+**Jimmy's Bonus Questions**
 
 - Define a function caled `playTournament()`
 	- Take 4 players and `playUntil` as arguments
@@ -239,7 +239,7 @@ Let's revisit Rock Paper Scissors...
 ## Homework
 
 ###**Due on 4/05/2019**
-- Complete the new [Rock Paper Scissors Challenge](https://github.com/ttsJavaScriptAppDevelopmentSummer16/classNotes/blob/master/Lesson%2003%20-%20Functions%20-%20Part%201.md#exercise-2-rps-revisited)
+- Complete the new [Rock Paper Scissors Challenge](https://github.com/Kayjim/tts-js-app-dev-2019/blob/master/Lesson%2003%20-%20Functions%20-%20Part%201.md#exercise-2-rps-revisited)
   - Push completed to GitHub with the name: `RPS_functions_YOUR_INITIALS_HERE`
 
 ###**Due on 4/08/2019**

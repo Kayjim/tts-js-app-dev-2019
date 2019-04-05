@@ -349,8 +349,8 @@ students.indexOf({name:'julian'}); //-1 (meaning nothing was found)
 ###**Due 7/26/2016**
 
 1. Complete the following class challenges
-  - [Exercise 1](https://github.com/ttsJavaScriptAppDevelopmentSummer16/classNotes/blob/master/Lesson%2002%20-%20Data%20Structures%20-%20Arrays%20&%20Objects.md#exercise-1)
-  - [Exercise 2](https://github.com/ttsJavaScriptAppDevelopmentSummer16/classNotes/blob/master/Lesson%2002%20-%20Data%20Structures%20-%20Arrays%20%26%20Objects.md#exercise-addressing-objects)
+  - [Exercise 1](https://github.com/Kayjim/tts-js-app-dev-2019/blob/master/Lesson%2002%20-%20Data%20Structures%20-%20Arrays%20%26%20Objects.md#exercise-1)
+  - [Exercise 2](https://github.com/Kayjim/tts-js-app-dev-2019/blob/master/Lesson%2002%20-%20Data%20Structures%20-%20Arrays%20%26%20Objects.md#exercise-addressing-objects)
   - push the completed code to GitHub
   - use the naming convention `lesson_2_challenges_YOUR_INITIALS_HERE`
 
