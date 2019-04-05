@@ -267,7 +267,7 @@ Let's say you're getting updated user settings from an API, but you don't want t
 
 
 ## Homework
-- Complete [Exercise #3](https://github.com/ttsJavaScriptAppDevelopmentSummer16/classNotes/blob/master/Lesson%2006%20-%20Object%20Orientation%20in%20JavaScript.md#exercise-3-mixins) from the class notes
+- Complete [Exercise #3](https://github.com/Kayjim/tts-js-app-dev-2019/blob/master/Lesson%2006%20-%20Object%20Orientation%20in%20JavaScript.md#exercise-3-mixins) from the class notes
   - push your solution to GitHub with the name `mixin_challenge_YOUR_INITIALS_HERE`
 - Read [What you need to know about OOP in JS](http://javascriptissexy.com/oop-in-javascript-what-you-need-to-know/)
 - Complete the [Prototype](https://github.com/sporto/planetproto) Nodeschool Module
