@@ -9,3 +9,4 @@ Each directory has example files from the class on that date.
 | 2019-04-05 | 3 | functions, part 1 |
 | 2019-04-06 | 4 | functions, part 2 |
 | 2019-04-07 | 5 | functions, part 3 |
+| 2019-04-09 | 6 | functions and objects |
