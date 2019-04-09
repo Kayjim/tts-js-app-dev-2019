@@ -409,7 +409,7 @@ console.log(parsedData);
 - AppCache
 
 
-## Exercise
+## Exercise 2
 
 Debug the following code: 
 
@@ -464,7 +464,7 @@ function howManyByHowMany(number){
 Will be updated later punks
 ```
 
-## Exercise 
+## Exercise 3
 
 - Same as before, work through this code using the Developer Debugging tools
 
@@ -585,7 +585,7 @@ console.log("one for the " + littleBoy + " that lives " + whereHeLives);
 
 ## Homework
 
-- Complete the [BaaBaaBlackSheep](https://github.com/ttsJavaScriptAppDevelopmentSummer16/classNotes/blob/master/Lesson%2007%20-%20JavaScript%20in%20the%20Browser.md#exercise-1) debugging challenge (individually)
+- Complete the [BaaBaaBlackSheep](https://github.com/Kayjim/tts-js-app-dev-2019/blob/master/Lesson%2007%20-%20JavaScript%20in%20the%20Browser.md#exercise-3) debugging challenge (individually)
   - Push the code to repo with the naming convention: `js_debugging_YOUR_INTIALS_HERE`
   - Clone the repo and create a new branch to work from 
 - Read this [excellent blog post](http://juliepagano.com/blog/2014/05/18/javascript-debugging-for-beginners/) about developer tools.
