@@ -28,11 +28,59 @@ function Teacher(name) {
 	}
 }
 
-var teacher1 = new Teacher('Shane');
-var teacher2 = new Teacher('Assaf');
+const teacher1 = new Teacher('Shane');
+const teacher2 = new Teacher('Assaf');
 
 teacher1.teach();
 teacher2.teach();
+```
+
+### Book Example
+
+```JavaScript
+class Book {
+    constructor(title, author, year) {
+        this.title = title;
+        this.author = author;
+        this.year = year;
+    }
+    getSummary() {
+        return `${this.title} was written by ${this.author}
+        in ${this.year}.`;
+    }
+    getAge() {
+        const age = new Date().getFullYear() - this.year;
+        return `${this.title} is ${age} years old.}`;
+    }
+    revise(newYear) {
+        this.year = newYear;
+        this.revised = true;
+    }
+    static topBookStore() {
+        return "Barnes & Noble";
+    }
+}
+
+class Magazine extends Book {
+    constructor(title, author, year, month) {
+        super(title, author, year);
+        this.month = month;
+    }
+}
+const book = new Book("book one", "a Person", "2019");
+const noot = new Book("Lerd Of the Rungs", "JJ Turken", "2001");
+const boot = new Book();
+boot.title = "new book";
+
+
+console.log(book.getSummary());
+
+const mag = new Magazine("mag one", "a dude", "2018", "April");
+
+console.log(mag.getSummary());
+console.log(book.getAge());
+
+console.log(Book.topBookStore());
 ```
 
 - The `new` keyword calls the function and returns the resulting object.
@@ -55,27 +103,42 @@ Write a `Particle` constructor function
 
 ## Constructor Exercise Answer
 ```javascript
+//ES5 Version
 function Particle(startX, startY) {
-this.x = startX;
-this.y = startY;
-this.velocity = {x: 0, y: 0};
+    this.x = startX;
+    this.y = startY;
+    this.velocity = {x: 0, y: 0};
 }
 
-/*
+const particles = [];
+for(let i = 0; i < 100; i++) {
+    particles.push(new Particle(i, Math.random()*500));
+}
+
+console.log(particles);
+
+
+//ES6 Version
 class Particle {
-constructor(startX, startY) {
-this.x = startX;
-this.y = startY;
-this.velocity = {x: 0, y: 0};
-}
-}
-*/
+    constructor(startX, startY) {
+        this.x = startX;
+        this.y = startY;
+        this.velocity = {x: 0, y: 0};
+    }
 
-var particles = [];
-for(var i = 0; i < 100; i++) {
-particles.push(new Particle(i, Math.random() * 500));
+    getX() {
+        return this.x;
+    }
+    getY() {
+        return this.y;
+    }
 }
 
+const particles = [];
+for(let i = 0; i < 100; i++) {
+    particles.push(new Particle(i, (Math.random()*500).toFixed(5)));
+    console.log(particles[i].getX(), particles[i].getY());
+}
 ```
 
 ## Inheritance (Classical vs Prototypal)
@@ -103,7 +166,7 @@ Teacher.prototype = {
 	}
 }
 
-var shane = new Teacher('shane');
+const shane = new Teacher('shane');
 shane.teach();
 ```
 
@@ -118,8 +181,8 @@ Teacher.prototype = {
 	disposition: 'evil'
 }
 
-var shane = new Teacher();
-var assaf = new Teacher();
+const shane = new Teacher();
+const assaf = new Teacher();
 console.log(shane.disposition, assaf.disposition) //evil, evil
 
 Teacher.prototype.disposition = 'happy';
@@ -143,8 +206,8 @@ Teacher.prototype = {
 	name: 'John Doe'
 }
 
-var shane = new Teacher();
-var assaf = new Teacher();
+const shane = new Teacher();
+const assaf = new Teacher();
 
 shane.name = "Shane";
 
@@ -172,13 +235,13 @@ function Graduate(){
 	this.skillz = 'Mad'
 };
 
-var p = new Person();
+const p = new Person();
 Student.prototype = p;
 
-var s = new Student();
+const s = new Student();
 Graduate.prototype = s;
 
-var g = new Graduate();
+const g = new Graduate();
 
 console.log(g.skillz, g.computer, g.brain);
 
@@ -196,19 +259,50 @@ console.log(g.hasOwnProperty('skillz'),g.hasOwnProperty('computer')) //true,fals
 
 Prototype chains are important to understand, but try not to create complex class hierarchies in your JS code.
 
+### ES6 Version of Prototype Chain and hasOwnProperty
+```JavaScript
+class Person {
+    constructor(){
+        this.brain = true;
+    }
+}
+class Student extends Person {
+    constructor() {
+        super();
+        this.computer = false;
+    }
+}
+class Graduate extends Student {
+    constructor() {
+        super();
+        this.skillz = "Mad";
+    }
+}
+
+const p = new Person();
+Student.prototype = p; //true
+const s = new Student();
+Graduate.prototype = s; //false
+const g = new Graduate(); //"Mad"
+console.log(g.skillz, g.computer, g.brain);
+
+//Using previous example
+console.log(g.hasOwnProperty('skillz'),g.hasOwnProperty('computer')) //true,false
+```
+
 ## Exercise 2: Prototypes
 
-- Create a `time` variable and set it to 0
-- Create a `gravity` variable and set it to 0.5
+- Create a `time` constiable and set it to 0
+- Create a `gravity` constiable and set it to 0.5
 - Extend the particle class from earlier with a prototype object.
 - Create a prototype object that contains:
 	- A property of `getVelocity()` that returns the value (time * gravity)
-	- A property of `move()` 
-		- `move()` should add the value from `getVelocity()` to the existing `y` position 
+	- A property of `move()`
+		- `move()` should add the value from `getVelocity()` to the existing `y` position
 		- If and when `y >= 500` `move()` should instead do the following: `console.log('bottom')`  
-- use your existing array and for loop to create a particles array 
+- use your existing array and for loop to create a particles array
 - Use `setInterval` at 100ms to
-	- increment the global `time` variable by 1
+	- increment the global `time` constiable by 1
 	- `console.log` all the particle's `x` values
 	- also `return` an array with all of the `y` values that are less than 500 (`y < 500`)
 	- take the array with `y` values  
@@ -218,7 +312,83 @@ Prototype chains are important to understand, but try not to create complex clas
 
 ## Exercise 2: Answer
 ```javascript
-//No soup for you!
+//ES5 version
+function Particle(startX, startY) {
+  this.x = startX;
+  this.y = startY;
+}
+
+Particle.prototype = {
+  getVelocity: function() {
+    return time * gravity;
+  },
+
+  move: function() {
+    this.y += this.getVelocity();
+    if (this.y >= 500) {
+      console.log("bottom");
+      clearInterval(interval);
+    }
+  }
+};
+
+const particles = [];
+for (let i = 0; i < 100; i++) {
+  particles.push(new Particle(i, Math.random() * 500));
+}
+
+setInterval(function() {
+  time++;
+  particles
+    .filter(function(p) {
+      console.log(p.x);
+      return p.y < 500;
+    })
+    .forEach(function(p) {
+      p.move();
+    });
+}, 100);
+
+//ES6 version
+const gravity = 0.5;
+let time = 0;
+const particles = [];
+
+class Particle {
+  constructor(startX, startY) {
+    this.x = startX;
+    this.y = startY;
+    this.velocity = { x: 0, y: 0 };
+  }
+
+  getVelocity() {
+    return time * gravity;
+  }
+
+  move() {
+    this.y += this.getVelocity();
+    if (this.y >= 500) {
+      console.log("bottom");
+      clearInterval(interval);
+    }
+  }
+}
+
+for (let i = 0; i < 100; i++) {
+  particles.push(new Particle(i, Math.random() * 500));
+}
+
+let interval = setInterval(function() {
+  time++;
+  particles
+    .filter(function(p) {
+      console.log(p.x);
+      return p.y < 500;
+    })
+    .forEach(function(p) {
+      p.move();
+    });
+}, 100);
 ```
 
 
@@ -230,19 +400,19 @@ Use `Object.assign(target, [...sources])` to copy properties from one or more ob
 ### Contrived example
 
 ```javascript
-var lion = {
+const lion = {
 	roar: function(){console.log('roar')}
 }
 
-var goat = {
+const goat = {
 	kick: function(){console.log('kick')}
 }
 
-var lizard = {
+const lizard = {
 	tail: true
 }
 
-var chimera = {}
+const chimera = {}
 Object.assign(chimera, lion, goat, lizard);
 
 chimera.roar();
@@ -254,13 +424,13 @@ chimera.tail;
 Let's say you're keeping track of multiple configuration settings for an application.
 
 ```javascript
-var baseConfig = {
+const baseConfig = {
 	appName: 'Slick',
 	apiKey: 'secretPassword',
 	apiBaseUrl: 'http://slickapp.co/api/'
 }
 
-var localConfig = Object.assign({}, baseConfig, {
+const localConfig = Object.assign({}, baseConfig, {
 	apiKey: 'localPassword',
 	apiBaseUrl: 'http://localhost:3000/api'
 });
@@ -279,18 +449,53 @@ Let's say you're getting updated user settings from an API, but you don't want t
 	- state
 	- zipcode
 	- avatar
-- Write a function `getProfileUpdate()` that hypothetically asks the user to update some profile properties and returns information about which properties were changed, and to what values.(for now, just hard code the return value)
+- Write a function `getProfileUpdate()` that changes something about the current profile. For now, just hard code the return value. *Unless you're brave enough to get user input.*
 - Write a function `updateProfile()` that takes a single object of keys:values and overwrites those keys on the profile object
 - Get a profile update and update the profile with it.
 - log the new profile
 
+
+## Exercise 3: Solution
+
+```javascript
+class Profile {
+    constructor(name, address, city, state, zip, avatar) {
+        this.name = name;
+        this.address = address;
+        this.city = city;
+        this.state = state;
+        this.zip = zip;
+        this.avatar = avatar;
+    }
+
+    getProfileUpdate() {
+        return {name: "newName", city: "San Francisco", avatar: "The Fog"};
+    }
+
+    updateProfile(object) {
+        const newProfile = Object.assign({}, object, object.getProfileUpdate());
+        console.log(newProfile);
+    }
+}
+
+let profile = new Profile("Bob", "123 No Way", "Charlotte", "NC", "28202", "A Building");
+let newProfile = new Profile(
+  "Bob",
+  "123 No Way",
+  "Charlotte",
+  "NC",
+  "28202",
+  "A Building"
+);
+profile.updateProfile(newProfile);
+```
 
 ## Homework
 - Complete [Exercise #3](https://github.com/Kayjim/tts-js-app-dev-2019/blob/master/Lesson%2006%20-%20Object%20Orientation%20in%20JavaScript.md#exercise-3-mixins) from the class notes
   - push your solution to GitHub with the name `mixin_challenge_YOUR_INITIALS_HERE`
 - Read [What you need to know about OOP in JS](http://javascriptissexy.com/oop-in-javascript-what-you-need-to-know/)
 - Complete the [Prototype](https://github.com/sporto/planetproto) Nodeschool Module
-	- upload the a screenshot of the completed module on slack 
+	- upload the a screenshot of the completed module on slack
 - Read [this & Object Prototypes](https://github.com/getify/You-Dont-Know-JS/blob/master/this%20&%20object%20prototypes/README.md#you-dont-know-js-this--object-prototypes)
 	- Write at least 1 sentence for each chapter, either...
 		- explaining what you've learned
@@ -302,4 +507,3 @@ Let's say you're getting updated user settings from an API, but you don't want t
 - https://vimeo.com/69255635
 - https://youtu.be/wfMtDGfHWpA
 - https://medium.com/javascript-scene/common-misconceptions-about-inheritance-in-javascript-d5d9bab29b0a#.p5acvjy5g
-
