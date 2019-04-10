@@ -184,22 +184,7 @@ const section = selectedItem.parentElement.parentElement.nextElementSibling;
 ## Exercise 1 Answer
 
 ```javascript
-//Laziness is your friend...
-const q = document.querySelector.bind(document)
-const qa = document.querySelectorAll.bind(document);
-
-
-q('header');
-qa('section');
-q('section.current');
-q('section.current').nextElementSibling;
-q('section.current').previousElementSibling.children[0];
-q('h2.highlight').parentElement.parentElement;
-
- var foo = Array.from(qa('section h2'))
-    .map(function(headline){
-        return headline.parentElement;
-    })
+TINY VIOLIN
 
 ```
 
@@ -319,29 +304,7 @@ list.appendChild(newLI); //Insert after item 1
 
 ## Exercise 2: Answer
 ```javascript
-var list = document.querySelector('#list');
-
-//1
-list.children[1].innerHTML = "Fair Trade Coffee";
-
-//2
-list.children[3].remove();
-
-//3
-var cheese = document.createElement('li');
-cheese.innerHTML = 'Cheese Whiz';
-list.appendChild(cheese);
-
-//4
-list.innerHTML = '';
-['protein powder', 'muscle milk', 'power bars'].forEach(function(itemText){
-	var li = document.createElement('li');
-	li.innerHTML = itemText;
-	list.appendChild(li);
-})
-
-//5
-list.children[1].className = "important"
+NOT YET
 
 ```
 
