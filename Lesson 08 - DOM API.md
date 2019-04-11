@@ -178,7 +178,7 @@ const section = selectedItem.parentElement.parentElement.nextElementSibling;
 4. Get the section that comes after the current section
 5. Get the h2 node from the section before the 'current' section
 6. Get the div that contains the section that has an h2 with a class of 'highlight'
-8. Get all the sections that contain an H2 (using a single statement);
+7. Get all the sections that contain an H2 (using a single statement);
 
 
 ## Exercise 1 Answer
@@ -319,7 +319,7 @@ NOT YET
 As previously discussed, async programming is important in JS. DOM events allow us to make use of asnychronous functions
 
 Elements emit events based on user input. You can run code in response to them. Events include:
-    
+
 - **Mouse events** - click, mouseover, mouseout
 - **Keyboard events** - keydown, keyup, etc
 - **Form events** - submit, blur, focus, change,
@@ -346,7 +346,7 @@ el.addEventListener('mouseover', function(event){
 You may be wondering what that event parameter is...
 *An event object is passed to the event handler that describes what happened*. The event object is different depending on the type of event.
 
-Events include: 
+Events include:
 - target - element where event occurred
 - Mouse: clientX, clientY
 - Keyboard: keyCode, shiftKey
