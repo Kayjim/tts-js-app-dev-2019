@@ -50,7 +50,7 @@ So, what is a lexical scope? Lexical scoping simply means that variables refer t
 
 ```javascript
 function add() {
-	var a = "This variable is only visible inside the add function";
+	const a = "This variable is only visible inside the add function";
 }
 
 console.log(a) // Undefined
@@ -58,7 +58,7 @@ console.log(a) // Undefined
 
 ```javascript
 function getGreeting(name) {
-	var greeting = "hello ";
+	const greeting = "hello ";
 	return greeting + name;
 }
 getGreeting('Shane'); // 'Hello Shane'
@@ -68,8 +68,8 @@ console.log(greeting) //undefined
 Blocks DO NOT have their own scope
 
 ```javascript
-for(var i = 0; i < 10; i++) {
-	var x = i;
+for(let i = 0; i < 10; i++) {
+	let x = i;
 }
 
 console.log(i,x); //9,9

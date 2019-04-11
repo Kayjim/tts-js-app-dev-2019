@@ -383,7 +383,7 @@ Let's create a simple todo application
 - When the user clicks on a list item, it is removed
 - **Extra Credit:** - When a list item is clicked, cross it out, then remove it after 1 second.
 
-- Complete the [CodeSchool jQuery](https://www.codeschool.com/courses/try-jquery) course
+// - Complete the [CodeSchool jQuery](https://www.codeschool.com/courses/try-jquery) course
 
 
 ## Reading
