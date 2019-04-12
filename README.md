@@ -13,4 +13,4 @@ Each directory has example files from the class on that date.
 | 2019-04-10 | 7 | JavaScript in the browser |
 | 2019-04-11 | 8 | DOM Traversal |
 | 2019-04-12 | 9 | JQuery |
-
+| 2019-04-12 | 10 | AJAX |
