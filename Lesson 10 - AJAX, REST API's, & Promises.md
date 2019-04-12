@@ -469,7 +469,7 @@ Using the API at http://jsonplaceholder.typicode.com/ create an app with the fol
 
 
 
-- Work with your partner to complete the [Promises Challenge](https://github.com/ttsJavaScriptAppDevelopmentSummer16/classNotes/blob/master/Lesson%2010%20-%20AJAX%2C%20REST%2C%20%26%20Promises.md#exercise-2---working-with-promises)
+- Work with your partner to complete the [Promises Challenge](https://github.com/Kayjim/tts-js-app-dev-2019/blob/master/Lesson%2010%20-%20AJAX%2C%20REST%20API's%2C%20%26%20Promises.md#exercise-2---working-with-promises)
     - Push to GitHub using the following naming convention: `promises_YOUR_TEAM_INTIALS_HERE`
 
 ## Resources and Extra Reading
