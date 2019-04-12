@@ -462,7 +462,7 @@ Using the API at http://jsonplaceholder.typicode.com/ create an app with the fol
 
 
 
-- Complete [Exercise 1](https://github.com/ttsJavaScriptAppDevelopmentSummer16/classNotes/blob/master/Lesson%2010%20-%20AJAX%2C%20REST%2C%20%26%20Promises.md#exercise-1-rest)
+- Complete [Exercise 1](hhttps://github.com/Kayjim/tts-js-app-dev-2019/blob/master/Lesson%2010%20-%20AJAX,%20REST%20API's,%20&%20Promises.md#exercise-1-rest)
     - Push to GitHub using the naming convention: `ajax_exercise_YOUR_INITIALS_HERE`
 - Complete the [promise it won't hurt](https://github.com/stevekane/promise-it-wont-hurt) nodeschool module
     - upload a screensot to slack
