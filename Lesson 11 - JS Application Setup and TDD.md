@@ -222,7 +222,7 @@ myMod.sayHi();
 ```
 
 ### Encapsulation
-For a module, being able to hide constiables and state and only exposing a deliberate API to its consumers is important. Modules let you achieve this.
+For a module, being able to hide const variables and state and only exposing a deliberate API to its consumers is important. Modules let you achieve this.
 
 ```javascript
 const myGreeting = "hi"; //Private!
