@@ -188,17 +188,7 @@ npm uninstall moment --save
 ### Exercise 2 Answer:
 
 ```javascript
-const Moment = require('moment');
-const Request = require('request-promise');
-
-function logResponse(resp){
-  console.log(resp, new Moment().format("h:mm:ss a"));
-}
-
-setInterval(function(){
-  Request('http://jsonplaceholder.typicode.com/posts/1')
-    .then(logResponse)
-},3000)
+console.log("tough luck kiddo");
 ```
 
 
@@ -349,6 +339,8 @@ describe('DataModule', function() {
 
 ## Homework
 
+###**Due 8/30/16**
+
 - Complete the [how-to-npm](https://github.com/npm/how-to-npm) module and post a screenshot to slack
     - Some notes about this particular module
     - On Challenge 03:<br> make sure to follow the steps exactly <br> run: `npm init --scope=<username>` entering the username created from the previous step<br>*note: if this is not done correctly, later challenges will NOT pass*
@@ -356,7 +348,7 @@ describe('DataModule', function() {
 - Watch [Importing and exporting modules with Node.js](https://youtu.be/P51O_PT7NUg)
 - Complete [Exercise 3](https://github.com/ttsJavaScriptAppDevelopmentSummer16/classNotes/blob/master/Lesson%2011%20-%20JS%20Application%20Setup%20and%20TDD.md#exercise-3-modular-code) on Modular code
     - Push the completed code to GitHub using the naming convention: `module_exercise_YOUR_INTIALS_HERE`
-- Read (and follow along with) the [Learn TDD](https://github.com/dwyl/learn-tdd) tutorial 
+- Read (and follow along with) the [Learn TDD](https://github.com/dwyl/learn-tdd) tutorial
     - Do not clone the repo (feel free to fork it though!)
     - complete each step
     - complete the bonus steps *skipping Bonus Step 3 on Continuous Integration*.<br> *note: feel free to read the section, continuous integration is awesome!*
