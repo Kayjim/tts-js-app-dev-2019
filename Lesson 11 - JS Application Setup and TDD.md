@@ -245,6 +245,47 @@ Take the previous exercise and factor out some reusable functionality.
 	- Export an object with a function `getTime()` that returns a timestamp string in the format `h:mm:ss a`
 3. Update your index.js file to use `DataAccess` and `TimeStamp`.
 
+## Exercise 3: Answers
+#### index.js
+```JavaScript
+const DataAccess = require('./module').DataAccess;
+const TimeStamp = require('./module').TimeStamp;
+
+const timeStamp = new TimeStamp();
+const dataAccess = new DataAccess();
+
+setInterval(function() {
+  dataAccess.getPost(1);
+  timeStamp.getTime();
+}, 300);
+
+```
+#### module.js
+```JavaScript
+const Moment = require("moment");
+const Request = require("request-promise");
+
+class DataAccess {
+  getPost(postId) {
+    return Request("http://jsonplaceholder.typicode.com/posts/" + postId).then(
+      response => console.log(response)
+    );
+  }
+}
+class TimeStamp {
+  getTime() {
+    console.log(new Moment().format("h:mm:ss a"));
+  }
+}
+
+module.exports = {
+  DataAccess,
+  TimeStamp
+};
+
+```
+
+
 ## Testing
 
 Real applications need automated tests, and JS apps are no different. There are many open source assertion frameworks and test runners that let you test your code.
