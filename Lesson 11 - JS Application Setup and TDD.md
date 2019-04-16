@@ -339,8 +339,6 @@ describe('DataModule', function() {
 
 ## Homework
 
-###**Due 8/30/16**
-
 - Complete the [how-to-npm](https://github.com/npm/how-to-npm) module and post a screenshot to slack
     - Some notes about this particular module
     - On Challenge 03:<br> make sure to follow the steps exactly <br> run: `npm init --scope=<username>` entering the username created from the previous step<br>*note: if this is not done correctly, later challenges will NOT pass*
