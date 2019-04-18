@@ -672,9 +672,9 @@ Congrats! You've just learned the basics of webpack!
 
 ## Homework
 
-###**Due 9/6/16**
 
-- Complete [Exercise #2](https://github.com/ttsJavaScriptAppDevelopmentSummer16/classNotes/blob/master/Lesson%2012%20-%20Webpack.md#exercise-2)
+
+- Complete [Exercise #2](#exercise-#2)
     - push completed code to GitHub using naming convention: `webpack_dice_YOUR_TEAM_INITIALS_HERE`
 - Find a blog on webpack and post it to the main slack channel
     - Your blog post has to be unique
