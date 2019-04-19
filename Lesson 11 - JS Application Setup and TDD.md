@@ -385,7 +385,7 @@ describe('DataModule', function() {
     - On Challenge 03:<br> make sure to follow the steps exactly <br> run: `npm init --scope=<username>` entering the username created from the previous step<br>*note: if this is not done correctly, later challenges will NOT pass*
     - For Challenge 11:<br> make sure you are using the a version number that has been published<br> the answer should look something like this `npm dist-tag add @yourusername/how-to-npm@1.1.6 ['stuff']`<br> *note: replace `@yourusername` with the Username supplied in Challenge 02, replace the version number with a version number previously published*
 - Watch [Importing and exporting modules with Node.js](https://youtu.be/P51O_PT7NUg)
-- Complete [Exercise 3](https://github.com/ttsJavaScriptAppDevelopmentSummer16/classNotes/blob/master/Lesson%2011%20-%20JS%20Application%20Setup%20and%20TDD.md#exercise-3-modular-code) on Modular code
+- Complete [Exercise 3](#Exercise-3:-Modular-Code) on Modular code
     - Push the completed code to GitHub using the naming convention: `module_exercise_YOUR_INTIALS_HERE`
 - Read (and follow along with) the [Learn TDD](https://github.com/dwyl/learn-tdd) tutorial
     - Do not clone the repo (feel free to fork it though!)
