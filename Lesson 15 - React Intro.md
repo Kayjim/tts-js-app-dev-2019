@@ -87,11 +87,11 @@ We'll be saving React and ReactDOM to use throughout our project. These are 2 se
 Install Webpack and Babel 
 
 ```bash
-$ npm install --save-dev html-webpack-plugin webpack webpack-dev-server webpack-cli
+$ npm install --save-dev html-webpack-plugin webpack@4.28.3 webpack-dev-server@3.1.14 webpack-cli@3.3.0 react-scripts
 ```
 
 ```bash
-$ npm install --save-dev babel-core babel-loader babel-preset-react babel-preset-es2015 babel-preset-react-hmre 
+$ npm install --save-dev babel-core babel-loader babel-preset-react babel-preset-es2015 babel-preset-react-hmre babel-core @babel/core
 ```
 
 In this step, we have installed webpack and 2 plugins:<br>
