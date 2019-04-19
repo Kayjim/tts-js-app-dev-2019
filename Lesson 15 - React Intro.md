@@ -228,7 +228,7 @@ Add your start script and run it.
 ```json
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server"
+    "start": "react-scripts start"
   },
 ```
 
