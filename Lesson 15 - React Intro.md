@@ -87,7 +87,7 @@ We'll be saving React and ReactDOM to use throughout our project. These are 2 se
 Install Webpack and Babel 
 
 ```bash
-$ npm install --save-dev html-webpack-plugin webpack webpack-dev-server 
+$ npm install --save-dev html-webpack-plugin webpack webpack-dev-server webpack-cli
 ```
 
 ```bash
@@ -166,19 +166,17 @@ module.exports = {
   },
 
   module: {
-    loaders: [
+    rules: [
       { test: [/\.js$/,/\.jsx$/], exclude: /node_modules/, loader: 'babel' }
     ]
   },
   resolve: {
-    extensions: ['', '.js', '.jsx'] // resolve all js extensions
+    extensions: ['.js', '.jsx'] // resolve all js extensions
   },
 
    devServer: {
     port: 3000,
-    contentBase: './dist',
-    colors: true,
-    inline: true
+    contentBase: './dist'
   },
 
   plugins: [
