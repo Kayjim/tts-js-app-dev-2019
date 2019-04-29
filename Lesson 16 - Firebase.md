@@ -117,6 +117,17 @@ changeSpeed = e => {
   };
 ```
 
+```javascript
+<img
+  src={this.state.image}
+  alt="logo"
+  style={{
+    animation: `App-logo-spin infinite ${this.state.speed}ms linear`,
+    height: "40vmin",
+    pointerEvents: "none"
+  }}
+```
+
 ## Promises
 
 To know when your data is committed to the Firebase Realtime Database server, you can use a Promise. Both `set()` and `update()` can return a Promise you can use to know when the write is committed to the database.
